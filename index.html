@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Jojo's Stand Fusion Generator (WIP)</title>
+
+
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+  <h1 class="flex-center">Jojo's Bizarre Stand Name Mixer</h1>
+
+  <div id="nameDiv" class="flex-center">
+    <div id="leftBracket" class="bracket">「</div>
+    &nbsp;
+    <div id="name" class="name">
+      Star
+    &nbsp;
+      Platinum
+    </div>
+    &nbsp;
+    <div id="rightBracket" class="bracket">」</div>
+  </div>
+
+  <div id="imgDiv" class="flex-center">
+    <a href="http://jojo.wikia.com/wiki/Star_Platinum" id="firstWiki" target="_blank">
+      <img id=firstImg class="standImg" src="https://vignette.wikia.nocookie.net/jjba/images/6/6a/StarPlatinumMangaAv.png/revision/latest?cb=20170511141902" alt="Star">  
+    </a>
+
+    <a href="http://jojo.wikia.com/wiki/Star_Platinum" id="lastWiki" target="_blank">
+      <img id=lastImg class="standImg" src="https://vignette.wikia.nocookie.net/jjba/images/6/6a/StarPlatinumMangaAv.png/revision/latest?cb=20170511141902" alt="Platinum">
+    </a>
+  </div>
+
+  <div id="controls" class="flex-center">
+    <button id="mixNamesBtn">Mix!</button>
+  </div>
+
+  <div id="checkBoxes" class="flex-center">
+      
+    <label for="part3Checkbox" class="toggle">
+      <input type="checkbox" id="part3Checkbox" class="toggle-input" name="toggle" value="part3" checked/>
+      <span id="part3Btn" class="toggle-button">Part 3</span>
+    </label>
+
+    <label for="part4Checkbox" class="toggle">
+      <input type="checkbox" id="part4Checkbox" class="toggle-input" name="toggle" value="part4" checked/>
+      <span class="toggle-button">Part 4</span>
+    </label>
+
+    <label for="part5Checkbox" class="toggle">
+      <input type="checkbox" id="part5Checkbox" class="toggle-input" name="toggle" value="part5" checked/>
+      <span class="toggle-button">Part 5</span>
+    </label>
+
+    <label for="part6Checkbox" class="toggle">
+      <input type="checkbox" id="part6Checkbox" class="toggle-input" name="toggle" value="part6" checked/>
+      <span class="toggle-button">Part 6</span>
+    </label>
+
+    <label for="part7Checkbox" class="toggle">
+      <input type="checkbox" id="part7Checkbox" class="toggle-input" name="toggle" value="part7" checked/>
+      <span class="toggle-button">Part 7</span>
+    </label>
+
+    <label for="part8Checkbox" class="toggle">
+      <input type="checkbox" id="part8Checkbox" class="toggle-input" name="toggle" value="part8" checked/>
+      <span class="toggle-button">Part 8</span>
+    </label>
+      
+  </div>
+
+  <div id="specialCheck" class="flex-center">
+    <label for="specialCheckbox" class="toggle">
+      <input type="checkbox" id="specialCheckbox" class="toggle-input" name="toggle" value="specialVal"/>
+      <span class="toggle-button">Include Special Names</span>
+    </label>
+    <p> If enabled, you will have a chance of having a special name added to the end (Ex: : The World, ACT1, ACT2, etc.) May contain minor spoilers. </p>
+  </div>
+
+
+  <script src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

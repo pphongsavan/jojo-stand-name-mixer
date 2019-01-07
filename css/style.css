@@ -1,0 +1,150 @@
+
+html {
+  font-size: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+}
+
+#nameDiv {
+  font-size: 2rem;
+}
+
+#imgDiv {
+
+}
+
+.standImg {
+  padding: 10px;
+  width: 150px;
+  height: 150px;
+}
+
+#controls {
+
+}
+
+#mixNamesBtn {
+  height: 30px;
+  font-size: 1.5rem;
+}
+
+#checkBoxes {
+  margin-top: 20px;
+  flex-flow: row wrap;
+
+}
+
+#specialCheck {
+  align-items: flex-start;
+  flex-flow: row wrap;
+  padding-top: 20px;
+}
+
+p {
+  font-size: 1rem;
+}
+
+.toggle {
+  font-size: 1rem;
+  margin: 10px 10px 0 0;
+}
+
+.toggle-input {
+  opacity: 0;
+}
+
+.toggle-input:focus {
+  box-shadow: 1px 1px blue;
+}
+
+.toggle-button {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  background: white;
+  color: #aaa;
+  border: solid 1px #ccc;
+  padding: 5px 10px 5px 30px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.toggle-button::before {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  content: "";
+  transition: all 0.3s ease;
+}
+
+.toggle-input:checked + .toggle-button {
+  background: #fab;
+  border-color: #fab;
+  color: white;
+}
+
+#part3Checkbox:checked + .toggle-button {
+  background: #000080;
+  border-color: #000080;
+}
+
+#part4Checkbox:checked + .toggle-button {
+  background: #ff80ff;
+  border-color: #ff80ff;
+}
+
+#part5Checkbox:checked + .toggle-button {
+  background: #ffb400;
+  border-color: #ffbf00;
+}
+
+#part6Checkbox:checked + .toggle-button {
+  background: #99cc00;
+  border-color: #99cc00;
+}
+
+#part7Checkbox:checked + .toggle-button {
+  background: #80e5ff;
+  border-color: #80e5ff;
+}
+
+#part8Checkbox:checked + .toggle-button {
+  background: #28aaaa;
+  border-color: #28aaaa;
+}
+
+#specialCheckbox:checked + .toggle-button {
+  background: #333;
+  border-color: #333;
+}
+
+.toggle-input:checked + .toggle-button::before {
+  background-color: white;
+}
+
+@media (min-width: 768px) {
+  #specialCheck {
+    flex-flow: column wrap;
+  }
+}
