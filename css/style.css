@@ -115,7 +115,7 @@ h1 {
   align-items: flex-start;
   flex-flow: row wrap;
   padding-top: 20px;
-  align-self: flex-end;
+  align-self: flex-start;
 }
 
 #specialPicAndSwitch {
