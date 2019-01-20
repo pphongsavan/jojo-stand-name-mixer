@@ -1,13 +1,6 @@
 
-html {
-  font-size: 100%;
-}
-
 #header {
-  display: flex;
   top: 0px;
-  align-items: center;
-  justify-content: center;
   padding: 1px 1px 0px 4px;
   background: #ED2091;
   width: 100%;
