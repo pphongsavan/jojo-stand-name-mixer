@@ -199,19 +199,23 @@ let includeSpecial = false;
 
 let activeStands = part3Stands.concat(part4Stands).concat(part5Stands).concat(part6Stands).concat(part7Stands).concat(part8Stands);
 
+// Initialize these for when user first loads page
 let firstIndex = 0;
 let lastIndex = 0;
 let specialName = "";
 
+// RNG for getting a random index
 function getIndex(myList) {
   return Math.floor(Math.random() * myList.length);
 }
 
+// Return a random name from the special list
 function getSpecial(myList) {
   let specialIndex = Math.floor(Math.random() * myList.length);
   return myList[specialIndex];
 }
 
+// Change the entire name, update DOM. Function for Mix Btn
 function makeName(myList) {
   firstIndex = getIndex(myList);
   lastIndex = getIndex(myList);
@@ -232,6 +236,7 @@ function makeName(myList) {
   }
 }
 
+// Change only the first name, update DOM. Function for 1st Switch.
 function switchFirstName(myList) {
   firstIndex = getIndex(myList);
 
@@ -243,6 +248,7 @@ function switchFirstName(myList) {
   updateFirstName(firstIndex);
 }
 
+// Change only the last name, update DOM. Function for 2nd Switch.
 function switchLastName(myList) {
   lastIndex = getIndex(myList);
 
@@ -254,11 +260,13 @@ function switchLastName(myList) {
   updateLastName(lastIndex);
 }
 
+// Get special name and update DOM. Used by Special Switch Btn.
 function switchSpecialName(myList) {
   name = getSpecial(specialNames);
   document.getElementById("specialName").innerHTML = `&nbsp;${name}`;
 }
 
+// Update DOM img, alt text, link, and text of first name
 function updateFirstName(index) {
   document.getElementById("firstImg").src = activeStands[index].imgLink;
   document.getElementById("firstImg").alt = activeStands[index].firstName;
@@ -266,6 +274,7 @@ function updateFirstName(index) {
   document.getElementById("firstName").textContent = activeStands[index].firstName;
 }
 
+// Update DOM img, alt text, link, and text of last name
 function updateLastName(index) {
   document.getElementById("lastImg").src = activeStands[index].imgLink;
   document.getElementById("lastImg").alt = activeStands[index].lastName;
@@ -273,6 +282,7 @@ function updateLastName(index) {
   document.getElementById("lastName").textContent = activeStands[index].lastName;
 }
 
+//Event Listeners
 document.getElementById("mixNamesBtn").addEventListener("click", function () {
   makeName(activeStands);
 });
@@ -289,8 +299,10 @@ document.getElementById("switchSpecialBtn").addEventListener("click", function()
   switchSpecialName(activeStands);
 });
 
+// Used by switch btns to remove certain parts from the active list
 function filter_part(partToFilter) {
   activeStands = activeStands.filter(stand => stand.partNum != partToFilter);
+  
   // let firstNameOptions = document.getElementById("selectFirst").options;
   // let lastNameOptions = document.getElementById("selectLast").options;
 

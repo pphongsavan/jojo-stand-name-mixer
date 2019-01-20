@@ -9,12 +9,6 @@
   max-height: 80px;
 }
 
-#nameDiv {
-  margin-top: 20px;
-  font-family: 'Merriweather', serif;
-
-}
-
 
 body {
   display: flex;
@@ -32,6 +26,18 @@ main {
   margin: auto;
 }
 
+h1 {
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.2rem;
+}
+
+p {
+  font-size: 0.85rem;
+  padding: 0px 20px 0px;
+  align-self: flex-start;
+}
+
 button {
   box-shadow: 1px 1px 4px #8E92B9;
 }
@@ -42,23 +48,26 @@ button {
   flex-wrap: wrap;
 }
 
-h1 {
-  text-align: center;
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 1.2rem;
-}
-
-/* .pic-n-switch {
-  flex-shrink: 
-} */
-
 #nameDiv {
   width: 100%;
   font-size: 3vmax;
+  margin-top: 20px;
+  font-family: 'Merriweather', serif;
 }
 
 #imgDiv {
   flex-direction: row;
+}
+
+.pic-n-switch {
+  flex-direction: column;
+  align-items: center;
+}
+
+.standImg {
+  padding: 10px;
+  width: 150px;
+  height: 150px;
 }
 
 .switch-btn {
@@ -75,29 +84,15 @@ h1 {
 
 }
 
-.pic-n-switch {
-  flex-direction: column;
-  align-items: center;
+#specialPicAndSwitch {
+  align-self: flex-end;
+  justify-self: flex-end;
 }
 
 #switchSpecialBtn {
   display: none;
   align-self: flex-end;
   margin-top: 10px;
-}
-
-.standImg {
-  padding: 10px;
-  width: 150px;
-  height: 150px;
-}
-
-#creds {
-
-}
-
-#mixNamesBtn {
-
 }
 
 #controls {
@@ -107,7 +102,6 @@ h1 {
 #checkBoxes {
   margin-top: 20px;
   flex-flow: row wrap;
-
 }
 
 #specialCheck {
@@ -115,17 +109,11 @@ h1 {
   padding-top: 20px;
 }
 
-#specialPicAndSwitch {
-  align-self: flex-end;
-  justify-self: flex-end;
+hr {
+  width: 50%;
 }
 
-p {
-  font-size: 0.85rem;
-  padding: 0px 20px 0px;
-  align-self: flex-start;
-}
-
+/* Toggle Buttons */
 .toggle {
   font-size: 1rem;
   margin: 10px 10px 0 0;
@@ -133,10 +121,6 @@ p {
 
 .toggle-input {
   opacity: 0;
-}
-
-span.toggle-button:focus {
-  box-shadow: 2px 2px blue;
 }
 
 .toggle-button {
@@ -209,10 +193,7 @@ span.toggle-button:focus {
   background-color: #f3f3f3;
 }
 
-hr {
-  width: 50%;
-}
-
+/* For screens larger than 768px */
 @media only screen and (min-width: 768px) {
   #specialCheck {
     flex-flow: row wrap;
@@ -220,13 +201,16 @@ hr {
     justify-content: baseline;
 
   }
+
   p {
     width: 50%;
     align-self: center;
   }
+
   #switchSpecialBtn {
-  display: none;
+    display: none;
   }
+
   h1 {
     font-size: 1.5rem;
   }
