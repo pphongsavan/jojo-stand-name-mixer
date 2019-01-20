@@ -112,10 +112,8 @@ h1 {
 }
 
 #specialCheck {
-  align-items: flex-start;
   flex-flow: row wrap;
   padding-top: 20px;
-  align-self: flex-start;
 }
 
 #specialPicAndSwitch {
