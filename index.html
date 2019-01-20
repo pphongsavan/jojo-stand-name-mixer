@@ -19,100 +19,103 @@
     <h1 class="flex-center">JoJo's Bizarre Stand Name Mixer</h1>
   </header>
 
-  <div id="nameDiv" class="flex-center">
-    <div id="leftBracket" class="bracket">「</div>
-    &nbsp;
-    <div id="firstName" class="name">
-      Star
+  <main>
+    <div id="nameDiv" class="flex-center">
+      <div id="leftBracket" class="bracket">「</div>
+      &nbsp;
+      <div id="firstName" class="name">
+        Star
+      </div>
+      &nbsp;
+      <div id="lastName" class="name">
+        Platinum
+      </div>
+      <div id="specialName" class="name">
+  
+      </div>
+      <div id="rightBracket" class="bracket">」</div>
     </div>
-    &nbsp;
-    <div id="lastName" class="name">
-      Platinum
-    </div>
-    <div id="specialName" class="name">
-
-    </div>
-    <div id="rightBracket" class="bracket">」</div>
-  </div>
-
-  <div id="imgDiv" class="flex-center">
-    <div class="pic-n-switch flex-center">
-        <a href="http://jojo.wikia.com/wiki/Star_Platinum" id="firstWiki" target="_blank">
-          <img id="firstImg" class="standImg" src="https://vignette.wikia.nocookie.net/jjba/images/6/6a/StarPlatinumMangaAv.png/revision/latest?cb=20170511141902" alt="Star">  
+  
+    <div id="imgDiv" class="flex-center">
+      <div class="pic-n-switch flex-center">
+          <a href="http://jojo.wikia.com/wiki/Star_Platinum" id="firstWiki" target="_blank">
+            <img id="firstImg" class="standImg" src="https://vignette.wikia.nocookie.net/jjba/images/6/6a/StarPlatinumMangaAv.png/revision/latest?cb=20170511141902" alt="Star">  
+          </a>
+          <button id="switchFirstBtn" class="switch-btn">Switch</button>
+          <!-- <select id="selectFirst"></select> -->
+      </div>
+      
+      <div class="pic-n-switch flex-center">
+        <a href="http://jojo.wikia.com/wiki/Star_Platinum" id="lastWiki" target="_blank">
+          <img id="lastImg" class="standImg" src="https://vignette.wikia.nocookie.net/jjba/images/6/6a/StarPlatinumMangaAv.png/revision/latest?cb=20170511141902" alt="Platinum">
         </a>
-        <button id="switchFirstBtn" class="switch-btn">Switch</button>
-        <!-- <select id="selectFirst"></select> -->
+        <button id="switchLastBtn" class="switch-btn">Switch</button>
+        
+        <!-- <select id="selectLast"></select> -->
+      </div>
+  
+      <div id="specialPicAndSwitch" class="pic-n-switch flex-center">
+        <button id="switchSpecialBtn" class="switch-btn">Switch</button>
+        <!-- <select id="selectSpecial"></select> -->
+      </div>
+  
     </div>
-    
-    <div class="pic-n-switch flex-center">
-      <a href="http://jojo.wikia.com/wiki/Star_Platinum" id="lastWiki" target="_blank">
-        <img id="lastImg" class="standImg" src="https://vignette.wikia.nocookie.net/jjba/images/6/6a/StarPlatinumMangaAv.png/revision/latest?cb=20170511141902" alt="Platinum">
-      </a>
-      <button id="switchLastBtn" class="switch-btn">Switch</button>
-      
-      <!-- <select id="selectLast"></select> -->
+  
+    <div id="controls" class="flex-center">
+      <button id="mixNamesBtn" class="switch-btn">Mix</button>
     </div>
-
-    <div id="specialPicAndSwitch" class="pic-n-switch flex-center">
-      <button id="switchSpecialBtn" class="switch-btn">Switch</button>
-      <!-- <select id="selectSpecial"></select> -->
+  
+    <div id="checkBoxes" class="flex-center">
+        
+      <label for="part3Checkbox" class="toggle">
+        <input type="checkbox" id="part3Checkbox" class="toggle-input" name="toggle" value="part3" checked/>
+        <span id="part3Btn" class="toggle-button">Part 3</span>
+      </label>
+  
+      <label for="part4Checkbox" class="toggle">
+        <input type="checkbox" id="part4Checkbox" class="toggle-input" name="toggle" value="part4" checked/>
+        <span class="toggle-button">Part 4</span>
+      </label>
+  
+      <label for="part5Checkbox" class="toggle">
+        <input type="checkbox" id="part5Checkbox" class="toggle-input" name="toggle" value="part5" checked/>
+        <span class="toggle-button">Part 5</span>
+      </label>
+  
+      <label for="part6Checkbox" class="toggle">
+        <input type="checkbox" id="part6Checkbox" class="toggle-input" name="toggle" value="part6" checked/>
+        <span class="toggle-button">Part 6</span>
+      </label>
+  
+      <label for="part7Checkbox" class="toggle">
+        <input type="checkbox" id="part7Checkbox" class="toggle-input" name="toggle" value="part7" checked/>
+        <span class="toggle-button">Part 7</span>
+      </label>
+  
+      <label for="part8Checkbox" class="toggle">
+        <input type="checkbox" id="part8Checkbox" class="toggle-input" name="toggle" value="part8" checked/>
+        <span class="toggle-button">Part 8</span>
+      </label>
+        
     </div>
+  
+    <div id="specialCheck" class="flex-center">
+      <label for="specialCheckbox" class="toggle">
+        <input type="checkbox" id="specialCheckbox" class="toggle-input" name="toggle" value="specialVal"/>
+        <span class="toggle-button">Include Special Names</span>
+      </label>
+      <p> If enabled, a special name is added to the end (Ex: : The World, ACT1, ACT2, etc.) </p>
+    </div>
+  
+    <hr>
+  
+    <div id="creds" class="flex-center">
+      <p> Inspired by Alex Onsager's <a href="http://pokemon.alexonsager.net/">Pokemon Fusion</a></p>
+      <p>Stand images and info from <a href="http://jojo.wikia.com/wiki/Main_Page">JoJo's Bizarre Encyclopedia</a> This is a fan project not associated with the wikia.</p>
+      <!-- <p>Questions, comments or suggestions? Email me at </p> -->
+    </div>
+  </main>
 
-  </div>
-
-  <div id="controls" class="flex-center">
-    <button id="mixNamesBtn" class="switch-btn">Mix</button>
-  </div>
-
-  <div id="checkBoxes" class="flex-center">
-      
-    <label for="part3Checkbox" class="toggle">
-      <input type="checkbox" id="part3Checkbox" class="toggle-input" name="toggle" value="part3" checked/>
-      <span id="part3Btn" class="toggle-button">Part 3</span>
-    </label>
-
-    <label for="part4Checkbox" class="toggle">
-      <input type="checkbox" id="part4Checkbox" class="toggle-input" name="toggle" value="part4" checked/>
-      <span class="toggle-button">Part 4</span>
-    </label>
-
-    <label for="part5Checkbox" class="toggle">
-      <input type="checkbox" id="part5Checkbox" class="toggle-input" name="toggle" value="part5" checked/>
-      <span class="toggle-button">Part 5</span>
-    </label>
-
-    <label for="part6Checkbox" class="toggle">
-      <input type="checkbox" id="part6Checkbox" class="toggle-input" name="toggle" value="part6" checked/>
-      <span class="toggle-button">Part 6</span>
-    </label>
-
-    <label for="part7Checkbox" class="toggle">
-      <input type="checkbox" id="part7Checkbox" class="toggle-input" name="toggle" value="part7" checked/>
-      <span class="toggle-button">Part 7</span>
-    </label>
-
-    <label for="part8Checkbox" class="toggle">
-      <input type="checkbox" id="part8Checkbox" class="toggle-input" name="toggle" value="part8" checked/>
-      <span class="toggle-button">Part 8</span>
-    </label>
-      
-  </div>
-
-  <div id="specialCheck" class="flex-center">
-    <label for="specialCheckbox" class="toggle">
-      <input type="checkbox" id="specialCheckbox" class="toggle-input" name="toggle" value="specialVal"/>
-      <span class="toggle-button">Include Special Names</span>
-    </label>
-    <p> If enabled, a special name is added to the end (Ex: : The World, ACT1, ACT2, etc.) </p>
-  </div>
-
-  <hr>
-
-  <div id="creds" class="flex-center">
-    <p> Inspired by Alex Onsager's <a href="http://pokemon.alexonsager.net/">Pokemon Fusion</a></p>
-    <p>Stand images and info from <a href="http://jojo.wikia.com/wiki/Main_Page">JoJo's Bizarre Encyclopedia</a> This is a fan project not associated with the wikia.</p>
-    <!-- <p>Questions, comments or suggestions? Email me at </p> -->
-  </div>
 
 
   <script src="js/index.js"></script>
