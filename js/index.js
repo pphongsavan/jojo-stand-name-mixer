@@ -193,31 +193,28 @@ let ozonBaby = new Stand("Ozon", "Baby", 8, "https://vignette.wikia.nocookie.net
 let part8Stands = [softAndWet, paisleyPark, nutKingCall, paperMoonKing, kingNothing, speedKing, killerQueen8, funFunFun, californiaKingBed, bornThisWay, lesFeuilles, iAmARock,
 doobieWah, loveLoveDeluxe, schottKeyNo1, schottKeyNo2, vitaminC, walkingHeart, milagroMan, blueHawaii, doggyStyle, brainStorm, ozonBaby];
 
-let specialNames = [" : The World", " ACT1", " ACT2", " ACT3", " ACT4", " Requiem", " Over Heaven", " Distortion"];
-
-const SPECIAL_CHANCE = 10;
+let specialNames = [": The World", "ACT1", "ACT2", "ACT3", "ACT4", "Requiem", "Over Heaven", "Distortion"];
 
 let includeSpecial = false;
 
 let activeStands = part3Stands.concat(part4Stands).concat(part5Stands).concat(part6Stands).concat(part7Stands).concat(part8Stands);
+
+let firstIndex = 0;
+let lastIndex = 0;
+let specialName = "";
 
 function getIndex(myList) {
   return Math.floor(Math.random() * myList.length);
 }
 
 function getSpecial(myList) {
-  let num = Math.floor(Math.random() * SPECIAL_CHANCE);
-  if (num <= 1) {
-    let specialIndex = Math.floor(Math.random() * myList.length);
-    return myList[specialIndex];
-  } else {
-    return "";
-  }
+  let specialIndex = Math.floor(Math.random() * myList.length);
+  return myList[specialIndex];
 }
 
 function makeName(myList) {
-  let firstIndex = getIndex(myList);
-  let lastIndex = getIndex(myList);
+  firstIndex = getIndex(myList);
+  lastIndex = getIndex(myList);
 
   if (firstIndex == lastIndex) {
     while (firstIndex == lastIndex){
@@ -225,31 +222,91 @@ function makeName(myList) {
     }
   }
 
+  updateFirstName(firstIndex);
+  updateLastName(lastIndex);
+
   if (includeSpecial) {
-    specialName = getSpecial(specialNames);
+    switchSpecialName(specialNames);
   } else {
-    specialName = "";
+    document.getElementById("specialName").textContent = "";
   }
+}
 
-  document.getElementById("name").innerHTML = `${activeStands[firstIndex].firstName} ${activeStands[lastIndex].lastName}${specialName}`;
+function switchFirstName(myList) {
+  firstIndex = getIndex(myList);
 
-  document.getElementById("firstImg").src = activeStands[firstIndex].imgLink;
-  document.getElementById("lastImg").src = activeStands[lastIndex].imgLink;
+  if (firstIndex == lastIndex) {
+    while (firstIndex == lastIndex) {
+      firstIndex = getIndex(myList);
+    }
+  }
+  updateFirstName(firstIndex);
+}
 
-  document.getElementById("firstImg").alt = activeStands[firstIndex].firstName;
-  document.getElementById("lastImg").alt = activeStands[lastIndex].lastName;
+function switchLastName(myList) {
+  lastIndex = getIndex(myList);
 
-  document.getElementById("firstWiki").href = activeStands[firstIndex].wikiLink;
-  document.getElementById("lastWiki").href = activeStands[lastIndex].wikiLink;
+  if (firstIndex == lastIndex) {
+    while (firstIndex == lastIndex) {
+      lastIndex = getIndex(myList);
+    }
+  }
+  updateLastName(lastIndex);
+}
+
+function switchSpecialName(myList) {
+  name = getSpecial(specialNames);
+  document.getElementById("specialName").innerHTML = `&nbsp;${name}`;
+}
+
+function updateFirstName(index) {
+  document.getElementById("firstImg").src = activeStands[index].imgLink;
+  document.getElementById("firstImg").alt = activeStands[index].firstName;
+  document.getElementById("firstWiki").href = activeStands[index].wikiLink;
+  document.getElementById("firstName").textContent = activeStands[index].firstName;
+}
+
+function updateLastName(index) {
+  document.getElementById("lastImg").src = activeStands[index].imgLink;
+  document.getElementById("lastImg").alt = activeStands[index].lastName;
+  document.getElementById("lastWiki").href = activeStands[index].wikiLink;
+  document.getElementById("lastName").textContent = activeStands[index].lastName;
 }
 
 document.getElementById("mixNamesBtn").addEventListener("click", function () {
   makeName(activeStands);
 });
 
+document.getElementById("switchFirstBtn").addEventListener("click", function() {
+  switchFirstName(activeStands);
+});
+
+document.getElementById("switchLastBtn").addEventListener("click", function() {
+  switchLastName(activeStands);
+});
+
+document.getElementById("switchSpecialBtn").addEventListener("click", function() {
+  switchSpecialName(activeStands);
+});
+
 function filter_part(partToFilter) {
   activeStands = activeStands.filter(stand => stand.partNum != partToFilter);
+  // let firstNameOptions = document.getElementById("selectFirst").options;
+  // let lastNameOptions = document.getElementById("selectLast").options;
+
+  // firstNameOptions.filter(stand => activeStands.indexOf(stand) != -1);
+  // lastNameOptions.filter(stand => activeStands.indexOf(stand) != -1);
 }
+
+// function setFirstSelectOptions(myList) {
+//   let optionList = document.getElementById("selectFirst").options;
+//   myList.forEach(stand => optionList.add(new Option(stand.firstName, stand)));
+// }
+
+// function setLastSelectOptions(myList) {
+//   let optionList = document.getElementById("selectLast").options;
+//   myList.forEach(stand => optionList.add(new Option(stand.lastName, stand)));
+// }
 
 let part3Checkbox = document.querySelector("#part3Checkbox");
 let part4Checkbox = document.querySelector("#part4Checkbox");
@@ -309,4 +366,17 @@ part8Checkbox.onchange = function() {
 
 specialCheckbox.onchange = function() {
   includeSpecial = !includeSpecial;
+  specialBtn = document.getElementById("switchSpecialBtn");
+  firstImg = document.getElementById("firstImg");
+  if(includeSpecial) {
+    specialBtn.style.display = 'inline';
+    // firstImg.style.marginRight = "150px";
+  } else {
+    specialBtn.style.display = 'none';
+    // firstImg.style.marginRight = "0px";
+  }
 }
+
+
+// setFirstSelectOptions(activeStands);
+// setLastSelectOptions(activeStands);

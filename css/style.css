@@ -3,31 +3,88 @@ html {
   font-size: 100%;
 }
 
+#header {
+  display: flex;
+  top: 0px;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 1px 0px 4px;
+  background: #ED2091;
+  width: 100%;
+  color: #fafafa;
+  box-shadow: 0px 2px 2px #333;
+  max-height: 80px;
+}
+
+#nameDiv {
+  margin-top: 20px;
+  font-family: 'Merriweather', serif;
+
+}
+
+
 body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  font-family: 'Helvetica', sans-serif;
+  margin: 0;
+  color: #333;
+
+}
+
+button {
+  box-shadow: 1px 1px 4px #8E92B9;
 }
 
 .flex-center {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 h1 {
   text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
-p {
-}
+/* .pic-n-switch {
+  flex-shrink: 
+} */
 
 #nameDiv {
-  font-size: 2rem;
+  width: 100%;
+  font-size: 3vmax;
 }
 
 #imgDiv {
+  flex-direction: row;
+}
 
+.switch-btn {
+  width: 150px;
+  height: 30px;
+  padding: 5px 5px 5px 5px;
+  text-transform: uppercase;
+  color: #333;
+  background: #F2EFF9;
+  border: solid 1px #ccc;
+  font-size: 1rem;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+
+.pic-n-switch {
+  flex-direction: column;
+  align-items: center;
+}
+
+#switchSpecialBtn {
+  display: none;
+  align-self: flex-end;
+  margin-top: 10px;
 }
 
 .standImg {
@@ -36,13 +93,16 @@ p {
   height: 150px;
 }
 
-#controls {
+#creds {
 
 }
 
 #mixNamesBtn {
-  height: 30px;
-  font-size: 1.5rem;
+
+}
+
+#controls {
+  padding-top: 10px;
 }
 
 #checkBoxes {
@@ -55,10 +115,18 @@ p {
   align-items: flex-start;
   flex-flow: row wrap;
   padding-top: 20px;
+  align-self: flex-end;
+}
+
+#specialPicAndSwitch {
+  align-self: flex-end;
+  justify-self: flex-end;
 }
 
 p {
-  font-size: 1rem;
+  font-size: 0.85rem;
+  padding: 0px 20px 0px;
+  align-self: flex-start;
 }
 
 .toggle {
@@ -70,20 +138,21 @@ p {
   opacity: 0;
 }
 
-.toggle-input:focus {
-  box-shadow: 1px 1px blue;
+span.toggle-button:focus {
+  box-shadow: 2px 2px blue;
 }
 
 .toggle-button {
   position: relative;
   display: inline-block;
   text-transform: uppercase;
-  background: white;
+  background: #f3f3f3;
   color: #aaa;
   border: solid 1px #ccc;
   padding: 5px 10px 5px 30px;
   transition: all 0.3s ease;
   cursor: pointer;
+  box-shadow: 1px 1px 4px #8E92B9;
 }
 
 .toggle-button::before {
@@ -101,7 +170,7 @@ p {
 .toggle-input:checked + .toggle-button {
   background: #fab;
   border-color: #fab;
-  color: white;
+  color: #f3f3f3;
 }
 
 #part3Checkbox:checked + .toggle-button {
@@ -140,11 +209,22 @@ p {
 }
 
 .toggle-input:checked + .toggle-button::before {
-  background-color: white;
+  background-color: #f3f3f3;
 }
 
 @media (min-width: 768px) {
   #specialCheck {
-    flex-flow: column wrap;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: baseline;
+
   }
+  p {
+    width: 50%;
+    align-self: center;
+  }
+  #switchSpecialBtn {
+  display: none;
+  }
+
 }

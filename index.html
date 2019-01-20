@@ -3,9 +3,9 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Jojo's Stand Fusion Generator (WIP)</title>
-
-
+  <title>JoJo's Stand Name Mixer</title>
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
 
@@ -13,32 +13,53 @@
 
 <body>
 
-  <h1 class="flex-center">Jojo's Bizarre Stand Name Mixer</h1>
+  <header id="header">
+    <h1 class="flex-center">JoJo's Bizarre Stand Name Mixer</h1>
+  </header>
 
   <div id="nameDiv" class="flex-center">
     <div id="leftBracket" class="bracket">「</div>
     &nbsp;
-    <div id="name" class="name">
+    <div id="firstName" class="name">
       Star
-    &nbsp;
-      Platinum
     </div>
     &nbsp;
+    <div id="lastName" class="name">
+      Platinum
+    </div>
+    <div id="specialName" class="name">
+
+    </div>
     <div id="rightBracket" class="bracket">」</div>
   </div>
 
   <div id="imgDiv" class="flex-center">
-    <a href="http://jojo.wikia.com/wiki/Star_Platinum" id="firstWiki" target="_blank">
-      <img id=firstImg class="standImg" src="https://vignette.wikia.nocookie.net/jjba/images/6/6a/StarPlatinumMangaAv.png/revision/latest?cb=20170511141902" alt="Star">  
-    </a>
+    <div class="pic-n-switch flex-center">
+        <a href="http://jojo.wikia.com/wiki/Star_Platinum" id="firstWiki" target="_blank">
+          <img id="firstImg" class="standImg" src="https://vignette.wikia.nocookie.net/jjba/images/6/6a/StarPlatinumMangaAv.png/revision/latest?cb=20170511141902" alt="Star">  
+        </a>
+        <button id="switchFirstBtn" class="switch-btn">Switch</button>
+        <!-- <select id="selectFirst"></select> -->
+    </div>
+    
+    <div class="pic-n-switch flex-center">
+      <a href="http://jojo.wikia.com/wiki/Star_Platinum" id="lastWiki" target="_blank">
+        <img id="lastImg" class="standImg" src="https://vignette.wikia.nocookie.net/jjba/images/6/6a/StarPlatinumMangaAv.png/revision/latest?cb=20170511141902" alt="Platinum">
+      </a>
+      <button id="switchLastBtn" class="switch-btn">Switch</button>
+      
+      <!-- <select id="selectLast"></select> -->
+    </div>
 
-    <a href="http://jojo.wikia.com/wiki/Star_Platinum" id="lastWiki" target="_blank">
-      <img id=lastImg class="standImg" src="https://vignette.wikia.nocookie.net/jjba/images/6/6a/StarPlatinumMangaAv.png/revision/latest?cb=20170511141902" alt="Platinum">
-    </a>
+    <div id="specialPicAndSwitch" class="pic-n-switch flex-center">
+      <button id="switchSpecialBtn" class="switch-btn">Switch</button>
+      <!-- <select id="selectSpecial"></select> -->
+    </div>
+
   </div>
 
   <div id="controls" class="flex-center">
-    <button id="mixNamesBtn">Mix!</button>
+    <button id="mixNamesBtn" class="switch-btn">Mix</button>
   </div>
 
   <div id="checkBoxes" class="flex-center">
@@ -80,7 +101,15 @@
       <input type="checkbox" id="specialCheckbox" class="toggle-input" name="toggle" value="specialVal"/>
       <span class="toggle-button">Include Special Names</span>
     </label>
-    <p> If enabled, you will have a chance of having a special name added to the end (Ex: : The World, ACT1, ACT2, etc.) May contain minor spoilers. </p>
+    <p> If enabled, a special name is added to the end (Ex: : The World, ACT1, ACT2, etc.) </p>
+  </div>
+
+  <hr>
+
+  <div id="creds" class="flex-center">
+    <p> Inspired by Alex Onsager's <a href="http://pokemon.alexonsager.net/">Pokemon Fusion</a></p>
+    <p>Stand images and info from <a href="http://jojo.wikia.com/wiki/Main_Page">JoJo's Bizarre Encyclopedia</a> This is a fan project not associated with the wikia.</p>
+    <!-- <p>Questions, comments or suggestions? Email me at </p> -->
   </div>
 
 
